@@ -1,0 +1,148 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdf2f8;
+  background-image: 
+    radial-gradient(circle at 100% 100%, #fce7f3 0%, transparent 25%),
+    radial-gradient(circle at 0% 0%, #fbcfe8 0%, transparent 25%);
+  min-height: 100vh;
+}
+
+.app-title {
+  color: #db2777;
+  text-shadow: 2px 2px 4px rgba(219, 39, 119, 0.1);
+}
+
+.app-title span {
+  display: inline-block;
+  animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+
+.cute-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px -5px rgba(219, 39, 119, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.cute-card:hover {
+  transform: translateY(-5px);
+  border-color: #fbcfe8;
+}
+
+.stat-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid #fce7f3;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px -5px rgba(219, 39, 119, 0.2);
+}
+
+.balance-display {
+  background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cute-input {
+  border: 2px solid #fce7f3;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.cute-input:focus {
+  border-color: #f472b6;
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.2);
+  outline: none;
+}
+
+.cute-button {
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.deposit-button {
+  background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+  border: none;
+}
+
+.withdraw-button {
+  background: linear-gradient(135deg, #fb7185 0%, #e11d48 100%);
+  border: none;
+}
+
+.transaction-card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.transaction-card:hover {
+  transform: scale(1.02);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 640px) {
+  .stat-card {
+    margin-bottom: 1rem;
+  }
+  
+  .cute-card {
+    padding: 1rem;
+  }
+  
+  .app-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Love theme decorations */
+.love-icon {
+  position: relative;
+  display: inline-block;
+  color: #ec4899;
+  margin: 0 0.5rem;
+}
+
+.love-icon::before {
+  content: '♥';
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
